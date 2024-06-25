@@ -1,0 +1,15 @@
+(: Declaración de la función :)
+declare function local:minPrice($c as xs:string?, $p as xs:decimal?, $d as xs:decimal?)
+as xs:decimal?
+{
+  let $disc := ($p * $d) div 100
+  (: Descuento del 50% en producciones americanas :)
+  let $discPais := if ($c = 'USA') then ($p * 50) div 100 else $disc
+  return ($p - $discPais)
+};
+
+(: Consulta principal :)
+for $x in //CD
+let $precioFinal := local:minPrice($x/COUNTRY, $x/PRICE, 10)
+order by number($x/PRICE), $precioFinal
+return <PVP>{data($x/PRICE)} rebajado a {$precioFinal}</PVP>

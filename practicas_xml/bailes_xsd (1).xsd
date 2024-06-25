@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Declaración XML y definición del esquema -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <!-- Definición del elemento raíz "bailes" -->
+    <xs:element name="bailes">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Definición del elemento "baile" que puede ocurrir múltiples veces (maxOccurs="unbounded") -->
+                <xs:element name="baile" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- Definición del elemento "nombre" dentro de "baile" -->
+                            <xs:element name="nombre" type="xs:string"/>
+                            <!-- Definición del elemento "precio" como un tipo complejo con contenido simple -->
+                            <xs:element name="precio">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <!-- Extensión del contenido simple base xs:decimal -->
+                                        <xs:extension base="xs:decimal">
+                                            <!-- Definición de los atributos "cuota" y "moneda" dentro de "precio" -->
+                                            <xs:attribute name="cuota" type="xs:string" use="required"/>
+                                            <xs:attribute name="moneda" type="xs:string" use="required"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <!-- Definición de los demás elementos dentro de "baile" -->
+                            <xs:element name="plazas" type="xs:integer"/>
+                            <xs:element name="comienzo" type="xs:string"/>
+                            <xs:element name="fin" type="xs:string"/>
+                            <xs:element name="profesor" type="xs:string"/>
+                            <xs:element name="sala" type="xs:integer"/>
+                        </xs:sequence>
+                        <!-- Definición del atributo "id" para el elemento "baile" -->
+                        <xs:attribute name="id" type="xs:integer" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,15 @@
+<!-- DTD created at Sat Jun 15 10:28:55 CEST 2024 with EditiX XML Editor (http://www.editix.com). Please insert an encoding attribute header for converting any DTD  -->
+
+<!ELEMENT ciudades (ciudad+)>
+<!ELEMENT ciudad (nombre, pais)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+<!ATTLIST pais
+continente (África|Oceanía|América|Europa|Ásia) #REQUIRED>
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos>
+	<alumno id="1">
+		<nombre_completo>Mauro Lafuente</nombre_completo>
+		<nif>2802031F</nif>
+		<telefonos>
+			<tel>633240956</tel>
+			<tel>622242346</tel>
+		</telefonos>
+		<emails>
+			<email>maurolafuente@gmail.com</email>
+			<email>mlaf@gmail.com</email>
+			<direccion>
+				<calle>Dr. Beellido</calle>
+				<numeracion>633</numeracion>
+				<planta>5º</planta>
+				<puerta/>
+			</direccion>
+		</emails>
+	</alumno>
+	<certif_prof>
+		<curso cp_id="cp200">
+			<nombre>Curso de Desarrollo Web</nombre>
+			<modulos>
+				<modulo mod_id="300">
+					<nombre>HTML y CSS</nombre>
+					<unidades_formativas>
+						<unidad_formativa uf_id="99">Introducción a HTML</unidad_formativa>
+						<unidad_formativa uf_id="100">CSS Básico</unidad_formativa>
+					</unidades_formativas>
+				</modulo>
+				<modulo mod_id="301">
+					<nombre>Java Script</nombre>
+					<unidades_formativas>
+						<unidad_formativa uf_id="101">Introducción JS</unidad_formativa>
+						<unidad_formativa uf_id="102">Bootstrap</unidad_formativa>
+					</unidades_formativas>
+				</modulo>
+			</modulos>
+			<practicas />
+			<inicio_practicas />
+			<fin_practias />
+		</curso>
+	</certif_prof>
+	<alumno id="2" />
+    ...
+
+</alumnos>
